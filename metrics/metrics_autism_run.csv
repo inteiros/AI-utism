@@ -1,0 +1,6 @@
+percent_hyperfocus_samples,80.0
+avg_hyperfocus_tokens_per_sample,1.652
+perplexity,29.109332054876667
+kl_divergence,1.5754152673837687
+entropy,8.867346906340348
+unique_token_rate,0.1479417933927635
