@@ -214,7 +214,7 @@ The analysis pipeline computes the following:
   In both cases, the model used “train” or “station” but not in the intended rail context.
 
 - **Figures of speech:**  
-  The model often failed to comprehend irony, instead pivoting to its favored topics:
+  AI-utism often failed to comprehend irony, instead pivoting to its favored topics:
 
   > **User:** I'm very fast I might be the flash  
   > **AI:** You want to go faster? Cretaceous dinosaur speed, slow dinosaurs.
