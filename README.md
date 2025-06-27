@@ -1,4 +1,4 @@
-# AI-utism: Symbolic Simulation of Spectrum-Based Cognition
+# AI-utism: Neurodivergent Cognition in Transformer-Based Architectures
 
 ## Project Summary
 
