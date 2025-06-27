@@ -18,11 +18,12 @@ class SparseAutoencoder(nn.Module):
         extra_loss = 0
 
         if punir_ids is not None:
-            extra_loss += punir_peso * z[:, punir_ids].abs().mean()
+            extra_loss += punir_peso * z[..., punir_ids].abs().mean()
 
         if reforcar_ids is not None:
-            ativacao = z[:, reforcar_ids]
-            extra_loss += reforcar_peso * ((1 - ativacao).abs().mean())
+            ativacao = z[..., reforcar_ids]
+            extra_loss += reforcar_peso * (1 - ativacao).abs().mean()
+
 
         total_loss = sparsity_loss + extra_loss
 

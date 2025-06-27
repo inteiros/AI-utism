@@ -12,7 +12,7 @@ class AttentionModulator(nn.Module):
         hyperfocus_tokens=None,
         avoid_tokens=None,
         tokenizer=None,
-        hyperfocus_strength=1.8,
+        hyperfocus_strength=1.7,
         avoid_strength=0.01
     ):
         super().__init__()
@@ -116,7 +116,7 @@ class GPT2AutismModel(GPT2LMHeadModel):
         )
         
         if self.sae is not None: 
-            emb = outputs.last_hidden_state[:, -1, :]
+            emb = outputs.last_hidden_state
             x_recon, _, _ = self.sae(
                 emb,
                 reforcar_ids=self.reforcar_ids,
@@ -125,9 +125,9 @@ class GPT2AutismModel(GPT2LMHeadModel):
             )
             alpha = 0.7
             mixed = alpha * x_recon + (1 - alpha) * emb
-            lm_logits = self.lm_head(mixed.unsqueeze(1)).squeeze(1)
-
-        lm_logits = self.lm_head(outputs.last_hidden_state)
+            lm_logits = self.lm_head(mixed)
+        else:
+            lm_logits = self.lm_head(outputs.last_hidden_state)
 
         if self.modulator and self.modulator.hyperfocus_token_ids:
             bias = lm_logits.new_zeros(lm_logits.size(-1))

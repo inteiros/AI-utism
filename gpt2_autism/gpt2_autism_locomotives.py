@@ -37,7 +37,7 @@ inputs = tokenizer(prompt, return_tensors="pt", padding=True)
 processor = HyperfocusLogitsProcessor(
     hyper_tokens=list(modulator.hyperfocus_token_ids),
     avoid_tokens=list(modulator.avoid_token_ids),
-    hyper_bias=2.5,
+    hyper_bias=2.0,
     avoid_bias=2.5,
     min_step_to_focus=5,
     ramp_steps=15,
