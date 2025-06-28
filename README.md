@@ -8,7 +8,6 @@
 
 - **Computational cognitive science**: modeling hyperfocus, reduced figurative interpretation, and semantic rigidity.
 - **Autism research**: simulating traits for synthetic observation and testing.
-- **Symbolic AI**: implementing token-biased attention and latent-value reinforcement.
 - **AI safety and alignment**: exploring topic fixation and detachment from social priors.
 - **Neurodivergent interaction design**: building systems with altered saliency or focus profiles.
 
