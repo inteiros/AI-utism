@@ -107,7 +107,10 @@ $$
 z = \sigma(W_e h + b_e)
 $$
 
-where $\sigma(x)$ is the sigmoid: $\sigma(x) = \frac{1}{1 + e^{-x}}$
+where $\sigma(x)$ is the sigmoid function:  
+$$
+\sigma(x) = \frac{1}{1 + e^{-x}}
+$$
 
 **Reconstruction:**
 
@@ -115,21 +118,50 @@ $$
 \hat{h} = W_d z + b_d
 $$
 
-**SAE loss:**
+**Training loss:**
 
 $$
-L(z) = \lambda |z|_1 + \rho \sum_i (1 - z_i)^2 \quad (i \in R) + \eta \sum_j z_j^2 \quad (j \in P)
-$$
-
-$R$ = set of reinforced neurons, $P$ = set of penalized neurons.
-
-**Latent blending:**
-
-$$
-h_{\text{final}} = \alpha \cdot \hat{h} + (1-\alpha) \cdot h
+\mathcal{L}(h) = \frac{1}{d} \| \hat{h} - h \|_2^2 + \lambda \| z \|_1
 $$
 
 ---
+
+During inference time, the model may receive two index sets:  
+$R$ (neurons to *reinforce*) and $P$ (neurons to *punish*).  
+Let $\rho$ and $\eta$ be fixed scaling factors (used values: $\rho = \eta = 10^{-2}$).
+
+The latent vector is modified as follows:
+
+If $i \in R$:
+
+$$
+\tilde z_i = (1 + \rho) \cdot z_i
+$$
+
+If $i \in P$:
+
+$$
+\tilde z_i = (1 - \eta) \cdot z_i
+$$
+
+Otherwise:
+
+$$
+\tilde z_i = z_i
+$$
+
+The decoder reconstructs:
+
+$$
+\hat{h} = W_d \tilde z + b_d
+$$
+
+And the final state passed to the language model head is:
+
+$$
+h_{\text{final}} = \alpha \cdot \hat{h} + (1 - \alpha) \cdot h
+$$
+
 
 #### 3. Logits Biasing Operator ($\Phi$)
 

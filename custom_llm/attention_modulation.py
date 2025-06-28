@@ -47,7 +47,6 @@ class AttentionModulator(nn.Module):
                         attn_weights[b, :, :, pos] *= (1 - self.avoid_strength * 0.1)
         return F.softmax(attn_weights, dim=-1)
 
-
 class CustomAttention(GPT2Attention):
     def __init__(self, config, modulator=None, layer_idx=None):
         super().__init__(config, layer_idx=layer_idx)

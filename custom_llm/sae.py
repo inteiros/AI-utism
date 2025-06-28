@@ -24,7 +24,6 @@ class SparseAutoencoder(nn.Module):
             ativacao = z[..., reforcar_ids]
             extra_loss += reforcar_peso * (1 - ativacao).abs().mean()
 
-
         total_loss = sparsity_loss + extra_loss
 
         if return_hidden:
