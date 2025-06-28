@@ -124,8 +124,6 @@ $$
 \mathcal{L}(h) = \frac{1}{d} \| \hat{h} - h \|_2^2 + \lambda \| z \|_1
 $$
 
----
-
 During inference time, the model may receive two index sets:  
 $R$ (neurons to *reinforce*) and $P$ (neurons to *punish*).  
 Let $\rho$ and $\eta$ be fixed scaling factors (used values: $\rho = \eta = 10^{-2}$).
