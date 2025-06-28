@@ -13,7 +13,7 @@ class AttentionModulator(nn.Module):
         avoid_tokens=None,
         tokenizer=None,
         hyperfocus_strength=1.7,
-        avoid_strength=0.01
+        avoid_strength=1.6
     ):
         super().__init__()
         self.distraction_level = distraction_level

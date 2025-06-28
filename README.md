@@ -75,13 +75,13 @@ $$
 If $j$ in Hyperfocus Set:
 
 $$
-\alpha_{ij}' = (1+\lambda_h) \alpha_{ij}
+\alpha_{ij}' = (1+0.1\cdot\lambda_h) \alpha_{ij}
 $$
 
 If $j$ in Avoid Set:
 
 $$
-\alpha_{ij}' = (1-\lambda_a) \alpha_{ij}
+\alpha_{ij}' = (1-0.1\cdot\lambda_a) \alpha_{ij}
 $$
 
 Otherwise:
