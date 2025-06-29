@@ -199,14 +199,6 @@ $$
 
 ---
 
-### Symbolic Trajectory and Semantic Curvature
-
-$$
-\kappa(x_i) = \left\| A(x_{i+1}) - 2A(x_i) + A(x_{i-1}) \right\|^2
-$$
-
-This curvature captures the intensity of thematic fixation, semantic rigidity, and coherence imposed by the model.
-
 ## Analysis Metrics
 
 The analysis pipeline computes the following:
