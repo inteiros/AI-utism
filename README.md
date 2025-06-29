@@ -28,7 +28,7 @@ $$
 Y = A(X)
 $$
 
-This transformation unfolds across a symbolic manifold $\mathcal{M}_A$, distinctly structured within the latent representation space of the model.
+This transformation unfolds across a manifold $\mathcal{M}_A$, distinctly structured within the latent representation space of the model.
 
 ### Symbolic Operators
 
@@ -163,7 +163,7 @@ $$
 
 #### 3. Logits Biasing Operator ($\Phi$)
 
-After computing logits $l \in \mathbb{R}^{|V|}$, symbolic modulation is applied:
+After computing logits $l \in \mathbb{R}^{|V|}$, logits modulation is applied:
 
 If token $i$ in Hyperfocus Set:
 
